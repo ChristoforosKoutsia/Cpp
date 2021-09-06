@@ -1,0 +1,5 @@
+In this folder some requirements should be covered such as:
+-Not very complex projects
+-readable and easy to follow coding style
+-STL coverage
+-etc, etc
