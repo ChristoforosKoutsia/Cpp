@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1632080016 source:c:\users\user\documents\github\cpp\intro\assignments\introduction_to_cpp_mit\assignment_3\geometry.cpp
+	<stdio.h>
+	<stdlib.h>
+	"geometry.h"
+	<iostream>
+	<math.h>
+
+1632076430 c:\users\user\documents\github\cpp\intro\assignments\introduction_to_cpp_mit\assignment_3\geometry.h
+
