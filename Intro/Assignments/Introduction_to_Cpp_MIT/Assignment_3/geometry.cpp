@@ -45,6 +45,7 @@ PointArray::PointArray(const PointArray& pv)
 PointArray::~PointArray()
 {
     delete [] p;
+    cout<<"Freeing p...\n";
 }
 
 /*Since we will allow modifications to our array, you’ll find that the internal array grows and shrinks quite often.
@@ -119,17 +120,64 @@ const Point *PointArray::get(const int position) const
     return (p+position);
 }
 
-int main()
+//class Polygon: implementation
+Polygon::Polygon(const Point arr[],const int length)
 {
-Point *p=new Point[5];
-Point u(7,3);
-
-//Construct an array of Points
-for (int i=0;i<5;i++)
-{
-    p[i].setX(i);
-    p[i].setY(i+2);
+    p_arr=PointArray(arr,length);
+    n++;
 }
-PointArray p_arr(p,5);
+/*Implement a constructor that creates a polygon using the points in an existing PointArray that is passed as an argument.
+(For the purposes of this problem, you may assume that the order of the points in the PointArray traces out a convex polygon.)
+ You should make sure your constructor avoids the unnecessary work of copying the entire existing PointArray each time it is called.*/
+Polygon::Polygon(const PointArray p)
+{
+    p_arr=p;
+    n++;
+}
+Polygon::~Polygon(){n--;}
 
+int Polygon::getNumSides()
+{
+    return p_arr.getSize(); //We want the size of point array. Actually, represents the number of the sides of the polygon
+}
+const PointArray* Polygon:: getPoints ()const
+{
+    return &p_arr;
+}
+int Polygon::n;
+
+/*
+**********Implementation of Polygon*************************
+
+Both of constructors should use member initializer syntax to call the base-class constructor,
+and should have nothing else in their bodies. C++ unfortunately does not allow us to define arrays on the fly to pass
+to base-class constructors. To allow using member initializer syntax, we can implement a little trick where we have a global array that
+we update each time we want to make a new array of Points for constructing a Polygon. You may include the following code snippet in your
+geometry.cpp file: */
+Point constructorPoints[4];
+
+Point *updateConstructorPoints( const Point &p1, const Point &p2, const Point &p3, const Point &p4 = Point(0,0)) {
+constructorPoints[0] = p1;
+constructorPoints[1] = p2;
+constructorPoints[2] = p3;
+constructorPoints[3] = p4;
+return constructorPoints;
+}
+/*We want to create a rectangle using 4 points.That's could be implemented by creating 4 points using only the lower left
+point and the upper right one. We will use the constructor of Point class for that purpose
+*/
+Rectangle::Rectangle(const Point &p1,const Point &p2):Polygon(updateConstructorPoints(p1,Point(p2.getX(),p1.getX()),
+                                                                                      p2,Point(p1.getX(),p2.getY())),4){}
+
+Rectangle::Rectangle(const int x1,const int x2, const int y1, const int y2):Polygon(updateConstructorPoints(Point(x1,y1),
+                                                                                      Point(x2,y1),Point(x2,y2),Point(x1,y2)),4){}
+double Rectangle::area() const
+{
+    int length=p_arr.get(1)->getX()-p_arr.get(0)->getX();
+    int width=p_arr.get(2)->getY()-p_arr.get(1)->getY();
+    return abs(length*width);
+}
+
+
+int main(){
 }
