@@ -182,12 +182,15 @@ Triangle::Triangle(const Point &p1,const Point &p2,const Point &p3):Polygon(upda
 double Triangle::area()
 {
     //Calculate area using Heron's formula
-    double a=p_arr.get(1)->getX()-p_arr.get(0)->getX(); //base
+    double a=sqrt(pow(p_arr.get(0)->getX()-p_arr.get(1)->getX(),2)+pow((p_arr.get(0)->getY()-p_arr.get(1)->getY()),2)); //base
 
     //It is well known from basic vector theory that distance between two arbitary points it is given by :d=sqrt(pow(x2-x1)+pow(y2-y1))
     double b=sqrt(pow(p_arr.get(2)->getX()-p_arr.get(1)->getX(),2)+pow((p_arr.get(2)->getY()-p_arr.get(1)->getY()),2));
+
     double c=sqrt(pow((p_arr.get(2)->getX()-p_arr.get(0)->getX()),2)+pow((p_arr.get(2)->getY()-p_arr.get(0)->getY()),2));
+
     double s=(a+b+c)/2;
+
     return ((double)sqrt(s*(s-a)*(s-b)*(s-c)));
 
 }
