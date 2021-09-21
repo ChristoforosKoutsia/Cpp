@@ -46,9 +46,9 @@ protected:
     static int n;
 public:
     Polygon(const Point arr[],const int length);
-    Polygon(const PointArray p);
-    ~Polygon();
-    /*Sometimes implementation of all function cannot be provided in a base class because we don’t know the implementation.
+    Polygon(const PointArray &p);
+
+/*Sometimes implementation of all function cannot be provided in a base class because we don’t know the implementation.
 Such a class is called abstract class.We cannot create objects of abstract classes.
 A pure virtual function (or abstract function) in C++ is a virtual function for which we can have implementation,
 But we must override that function in the derived class, otherwise the derived class will also
@@ -57,14 +57,21 @@ virtual double area() = 0;
 static int getNumPolygons(){return n;}
 int getNumSides();
 const PointArray* getPoints() const;
+~Polygon(){--n;}
 };
 
 class Rectangle: public Polygon{
 public:
     Rectangle(const Point &x,const Point &y); //Pass by reference...we do not want to copy again objects
     Rectangle(const int a,const int b,const int c,const int d);
-    virtual double area() const;
-
+     double area() ;
 };
+
+class Triangle:public Polygon{
+public:
+    Triangle(const Point &p1,const Point &p2,const Point &p3);
+     double area();
+};
+void printAttributes(Polygon *);
 #endif // GEOMETRY_H_INCLUDED
 
