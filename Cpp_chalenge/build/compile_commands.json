@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/billk/Υπολογιστής/CERN_solving_problem/challenge/build",
+  "command": "C:/msys64/mingw64/bin/g++.exe   -g -std=gnu++17 -o CMakeFiles/DeviceManagerApp.dir/solution.cpp.obj -c C:/Users/billk/Υπολογιστής/CERN_solving_problem/challenge/solution.cpp",
+  "file": "C:/Users/billk/Υπολογιστής/CERN_solving_problem/challenge/solution.cpp",
+  "output": "CMakeFiles/DeviceManagerApp.dir/solution.cpp.obj"
+},
+{
+  "directory": "C:/Users/billk/Υπολογιστής/CERN_solving_problem/challenge/build",
+  "command": "C:/msys64/mingw64/bin/g++.exe   -g -std=gnu++17 -o CMakeFiles/DeviceManagerApp.dir/custom_exceptions.cpp.obj -c C:/Users/billk/Υπολογιστής/CERN_solving_problem/challenge/custom_exceptions.cpp",
+  "file": "C:/Users/billk/Υπολογιστής/CERN_solving_problem/challenge/custom_exceptions.cpp",
+  "output": "CMakeFiles/DeviceManagerApp.dir/custom_exceptions.cpp.obj"
+}
+]

@@ -1,0 +1,3 @@
+C:/Users/billk/Υπολογιστής/CERN_solving_problem/challenge/build/CMakeFiles/DeviceManagerApp.dir
+C:/Users/billk/Υπολογιστής/CERN_solving_problem/challenge/build/CMakeFiles/edit_cache.dir
+C:/Users/billk/Υπολογιστής/CERN_solving_problem/challenge/build/CMakeFiles/rebuild_cache.dir
