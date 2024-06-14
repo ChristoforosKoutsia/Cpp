@@ -52,6 +52,18 @@
         "iostream": "cpp",
         "istream": "cpp",
         "sstream": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "cstdarg": "cpp",
+        "chrono": "cpp",
+        "fstream": "cpp",
+        "cstring": "cpp",
+        "codecvt": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "iomanip": "cpp",
+        "cfenv": "cpp",
+        "cinttypes": "cpp",
+        "any": "cpp",
+        "set": "cpp"
     }
 }

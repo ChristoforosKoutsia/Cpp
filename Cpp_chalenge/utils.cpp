@@ -1,19 +1,10 @@
 /*
-Helper function are defined here which are general usage helper function
+Helper functions are defined here 
 */
 
 #include <sstream>
 #include "custom_exceptions.hpp"
 #include "utils.hpp"
-
-bool isNumeric(const std::string& str) {
-    for (char c : str) {
-        if (!std::isdigit(c)) {
-            return false;
-        }
-    }
-    return true;
-}
 
 
 std::vector<uint8_t> strToIntVec(const std::string& str)
@@ -27,24 +18,25 @@ std::vector<uint8_t> strToIntVec(const std::string& str)
     std::istringstream iss(str);
     while (std::getline(iss, token, ',')) 
     {
-    // Try to convert token to an integer
-        if (token.empty() or !isNumeric(token) )
+        int num;
+        // check if token could be converted to integer
+        try
         {
-            throw InvalidParameterStruct(str);  
+            num = std::stoi(token);
         }
-        else 
+        catch(const std::exception& e)
         {
-            int num = std::stoi(token);
-            if (num >=0 && num <=255)
+            throw InvalidParameterStruct(str);
+        }
+        
+        if (num >=0 && num <=255)
             {
                  params.push_back(num);
             }
             else
             {
                  throw InvalidParameterValue(token);
-            }
-           
-        }                             
+            }                         
 
     }
     return params; 

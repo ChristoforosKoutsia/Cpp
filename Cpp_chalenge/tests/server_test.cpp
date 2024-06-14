@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../solution.hpp"  // Assuming this includes Server, Action, and Device class definitions
+#include "../solution.hpp"
 #include "../physical_device.h"
 #include <thread>
 #include "../custom_exceptions.hpp"
@@ -7,14 +7,6 @@
 // Test fixture for setting up the test environment
 class ServerTest : public ::testing::Test {
 protected:
-    void SetUp() override {
-        // Code here will be called immediately after the constructor (right before each test).
-    }
-
-    void TearDown() override {
-        // Code here will be called immediately after each test (right before the destructor).
-    }
-
     Server server;
 };
 
@@ -37,8 +29,8 @@ TEST_F(ServerTest, SetAndGetDeviceName) {
 TEST_F(ServerTest, SetAndGetDeviceParams) {
     Device device(1);
     server.addDevice(device);
-    server.createAction("s params 0 4,3,2,1,0,44,55,44,55").getResult();
-    EXPECT_EQ(server.createAction("g params 0").getResult(), "4,3,2,1,0,44,55,44,55");
+    server.createAction("s params 0 1,3,2,0,255,67,67").getResult();
+    EXPECT_EQ(server.createAction("g params 0").getResult(), "0,1,2,3,67,67,255");
 }
 
 // Test invalid device ID

@@ -1,96 +1,29 @@
-#include <string>
-#include "physical_device.h" 
-#include <vector>
-#include <algorithm>
-#include <condition_variable>
 #include <iostream>
-#include <memory>
-#include "solution.hpp"
 #include <sstream>
-#include <variant>
-#include "custom_exceptions.cpp"
+#include <thread>
+#include "custom_exceptions.hpp"
+#include "utils.hpp"
+#include "solution.hpp"
+#include "physical_device.h" 
 
-bool isNumeric(const std::string& str) {
-    for (char c : str) {
-        if (c == 32 && str.size() > 1)
-        {
-            continue; // spaces at the beggining are allowed
-        }
-        if (!std::isdigit(c)) {
-            return false;
-        }
-    }
-    return true;
-}
-
-
-std::vector<uint8_t> strToIntVec(const std::string& str)
-{
-    // This is helper function which converts a string to vector of unsigned integers (0-255) with the 
-    //following specifications : 
-    // - String shall have only numerical values separated by comma (e.g "1,2,3,6...") 
-    // - Every value between commas shall be  in range (0-255)
-    std::vector<uint8_t> params;
-    std::string token;
-    std::istringstream iss(str);
-    while (std::getline(iss, token, ',')) 
-    {
-    // Try to convert token to an integer
-        if (token.empty() or !isNumeric(token) )
-        {
-            throw InvalidParameterStruct(str);  
-        }
-        else 
-        {
-            int num = std::stoi(token);
-            if (num >=0 && num <=255)
-            {
-                 params.push_back(num);
-            }
-            else
-            {
-                 throw InvalidParameterValue(token);
-            }
-           
-        }                             
-
-    }
-    return params; 
-}
-
-
-std::string vectorToString(const std::vector<uint8_t>& vec) {
-    std::ostringstream oss;
-    for (size_t i = 0; i < vec.size(); ++i) {
-        if (i != 0) {
-            oss << ",";
-        }
-        oss << static_cast<int>(vec[i]);
-    }
-    return oss.str();
-}
-
-
+// ################################ Device class implementation ###############################################
 Device:: Device(int physical_id)
 {
-    m_id = physical_id;
-    //std::lock_guard<std::mutex> lock(*lib::getMutex());
     lib::getMutex()->lock();
-    //m_physical_device = std::make_shared<lib::Physical_device>(lib::getHardware(physical_id));
     m_physical_device = new lib::Physical_device(lib::getHardware(physical_id));
     m_some_factor     = lib::getDefaultFactor();
     lib::getMutex()->unlock();
 }
 
-// Device(int physical_id, int fixed_factor)
-// {
-//     m_some_factor = fixed_factor;
-//     m_id = physical_id;
-//     std::lock_guard<std::mutex> lock(*lib::getMutex());
-//     m_physical_device = std::make_shared<lib::Physical_device>(lib::getHardware(physical_id));
-// }
+Device:: Device(int physical_id, int fixed_factor)
+{
+    m_some_factor = fixed_factor;
+    lib::getMutex()->lock();
+    m_physical_device = new lib::Physical_device(lib::getHardware(physical_id));
+    lib::getMutex()->unlock();
+}
 
- std::string Device:: getName() const
+ const std::string Device:: getName() const
 {
     return m_name;
 }
@@ -105,36 +38,46 @@ void Device::setParams(const std::vector<uint8_t>& params)
     m_params = params;
 }
 
-std::vector<uint8_t> Device:: getParams() const
+const std::vector<uint8_t> Device:: getParams() const
 {
     return m_params;
 }
 
-
-int Device:: getId() const
-{
-    return m_id;
-}
-
-
-
+// ################################ Action class implementation ###############################################
 
 Action::Action(std::string const &command, Server& server)
 {
+    // action class may have a server instance value so in getResult can call executeAction method 
+    // to realize the user's command 
     m_command = command;
-    m_server = &server; // use pass by reference so server object is manipulated here
+    m_server = &server;
 }
 
-std::string Action::getResult() const
+const std::string Action::getResult()
 {
+// Method that realize user's commands as per specification. 
+// Parses user's inputs and in case of sucessful input executes the command in the server side
+// if any exception is thrown either during the parsing (e.g bad syntax) or during command execution (e.g not correct action etc)
+// then the exception is caught and correspoding message is returned. Otherwise, command is executed normally and empty string is returned
+// the blocking is realized in server side when the actions is executed in order to avoid race conditions
 try
-{
-    /* code */
-
-
+{   
+    // The logic is that user's input string is casted to stringstream and all relevant fields
+    // which supposed to be separated by space are stored in correspoding separated strings
+    // Then, after checking the action (which is should be either 's' for set or 'g' for get) a res_command string 
+    // is syntesized which is structured as set_attribute or get_attribute.
+    // These commands formed as mentioned are registered in Server class and each string command (e.g "set_name") corresponds to a specific function
     std::istringstream iss(m_command);
-    std::string action, attribute, device_id_str ,params,res_command;
-    iss >> action >> attribute >> device_id_str>>params;
+    std::string action, attribute, device_id_str ,params, remaining_str, res_command;
+    iss >> action >> attribute >> device_id_str>>params>>remaining_str;
+
+    // check that there are no any remaining arguments in the given string from the user
+    // if there are , then Exception is thrown since it is considered that the desired actions is not well-formed
+    // e.g (params 0 1,3,2,0,255,67,67  ,5) should not be acceptable(as per specification) since there is space after 67
+    if (!remaining_str.empty())
+    {
+        throw InvalidCommandStruct(m_command,remaining_str);
+    }
 
     // Check of action
     if (action == "s")
@@ -154,16 +97,19 @@ try
     // Check of attribute could be literally anything. The check will be done aftwerwards in executeAction method
     res_command += "_" + attribute;
  
-    // convert id to integer and check that is >0
+    // try to convert id to integer
     int id;
-    id = std::stoi(device_id_str);
-    if (id < 0)
+    try
+    {
+        id = std::stoi(device_id_str);
+
+    }
+    catch (const std::exception& e)
     {
         throw InvalidDeviceId(device_id_str);
     }
-
-     
-        return m_server->executeAction(res_command,id,params);
+    
+   return m_server->executeAction(res_command,id,params);
 }
 catch(const std::exception& e)
 {
@@ -171,13 +117,14 @@ catch(const std::exception& e)
 }
 }
 
+// ################################ Server class implementation ###############################################
 
-// define static_member m_devices
+// define static_member m_devices since as per specification "Once added, the device is never removed."
 std::vector<Device> Server::m_devices;
 
 Server::Server()
 {
-    // Register actions
+    // Register actions in a form action_attribute so can be called from Action class and invoked here, from the Server
     actionMap["set_name"] = [this](int id, const std::string& param) -> std::string{ return setDevName(id, param); };
     actionMap["set_params"] = [this](int id, const std::string& param) -> std::string{ return setDevParams(id, strToIntVec(param)); };
     actionMap["get_name"] = [this](int id, const std::string&) -> std::string { return getDevName(id); };
@@ -187,125 +134,62 @@ Server::Server()
 void Server::addDevice (const Device& dev)
 {
     std::lock_guard<std::mutex> lock(mutex_);
+
+    //Order of the devices corresponds to their IDs (i.e. the first added device gets ID 0, the second added gets 1, and so on)
+    m_devices_id.push_back(m_devices.size());
     m_devices.push_back(dev);
-    m_devices_id.push_back(m_devices.size()-1);
 }
 
 
 Action Server::createAction(std::string command)
 {
-    // create object action
-    return Action(command, *this); // pass also current instance of server since Action object should know the current devices etc
-             
+
+    return Action(command, *this); // pass also current instance of server since Action object may send a request for action execution
 }
 
-const std::string Server::executeAction(const std::string& action, int id, const std::string& param = "") {
-    if (actionMap.find(action) != actionMap.end()) {
+const std::string Server::executeAction(const std::string& action, int id, const std::string& param = "") 
+{   
+    std::unique_lock<std::mutex> lock(mutex_);
+    // firstly check of id since id shloud exist  in order to perform action
+    if (id >= m_devices.size() or id < 0)
+    {
+        throw InvalidDeviceId(std::to_string(id));
+    }
+
+    // check that action is refgistered in the map
+    if (actionMap.find(action) != actionMap.end()) 
+    {
         return actionMap[action](id, param);
-    } else {
+    } 
+    else 
+    {
         throw InvalidCommand(action);
     }
 }
 
-// implementationn of private methods
+// implementation of private methods
 const std::string Server::setDevName(int id, const std::string& name)
 {   
-    // locking the mutex so there are no race condition
-    std::lock_guard<std::mutex> lock(mutex_);
-
-    if (id >= 0 && id < m_devices.size())
-    {
-        m_devices[id].setName(name);
-        return "";
-    }
-    else
-    {
-        throw std::invalid_argument("Invalid token:");
-    }
-
+    m_devices[id].setName(name);
+    return "";
 }
 
 const std::string Server::setDevParams(int id, const std::vector<uint8_t> &params)
 {
-    std::lock_guard<std::mutex> lock(mutex_);
-    if (id >= 0 && id < m_devices.size())
-    {
-        m_devices[id].setParams(params);
-        return "";
-    }
-    else
-    {
-        throw InvalidDeviceId(std::to_string(id));
-    }
+    m_devices[id].setParams(params);
+    return "";
 }
 
 const std::string Server::getDevName(int id) 
 {   
-    // locking the mutex so there are no race condition
-    std::lock_guard<std::mutex> lock(mutex_);
-
-    if (id >= 0 && id < m_devices.size())
-    {
-        return (m_devices[id].getName());
-    }
-    else
-    {
-        throw InvalidDeviceId(std::to_string(id)); 
-    }
-
+    return (m_devices[id].getName());
 }
 
 const std::string Server::getDevParams(int id) 
 {   
-    // locking the mutex so there are no race condition
-    std::lock_guard<std::mutex> lock(mutex_);
-
-    if (id >= 0 && id < m_devices.size())
-    {
-        return vectorToString(m_devices[id].getParams());
-    }
-    else
-    {
-        throw InvalidDeviceId(std::to_string(id));
-    }
-
-}
-
-  
-// Sample main() functon - might be useful for quick testing 
-int main()
-{
-    Server server;
-    std::string y;
-    //server.addDevice(Device(97));
-    server.addDevice(Device(98));
-    server.addDevice(Device(99));
-    server.addDevice(Device(3));
-    server.addDevice(Device(98));
-    server.addDevice(Device(99));
-    server.addDevice(Device(3));
-    server.addDevice(Device(98));
-    server.addDevice(Device(99));
-    server.addDevice(Device(3));
-    Server server2;
-    server2.addDevice(Device(8));
-   std::cout<<server.createAction("s name 0 pc_magnet_1").getResult()<<std::endl;      
-   std::cout<<server.createAction("s name 1 some_name").getResult()<<std::endl;
-   std::cout<<server.createAction("s params 0 4,3,2,1,0,44,55,44,55").getResult()<<std::endl;
-    
-
-    std::cout<<server.createAction("g name 0").getResult()<<std::endl;                              // = "pc_magnet_1"
-    std::cout<<server.createAction("g name 1").getResult()<<std::endl;                              // = "some_name"
-    std::cout<<server.createAction("g name 2").getResult()<<std::endl;                     // = "2"
-
-    std::cout<<server.createAction("g name 3").getResult()<<std::endl;                              // = <Error>
-    std::cout<<server.createAction("randomletters").getResult()<<std::endl;                          // = <Error>
-    std::cout<<server.createAction("g name notanumber").getResult()<<std::endl;                     // = <Error>
-
-    std::cout<<server.createAction("s params 0 4,3,2,1,0,44,55,44,55").getResult()<<std::endl;      // = ""
-    std::cout<<server.createAction("s params 0 4,3,2,1,0,44,55,44,55,9999").getResult()<<std::endl; // = <Error>
-    std::cout<<server.createAction("s params 0 4,3,,2").getResult()<<std::endl;                     // = <Error>
-    std::cout<<server.createAction("g params 0").getResult()<<std::endl;                            // = "0,1,2,3,4,44,44,55,55"
-
-return 0;
+    // returns a list of device parameters, separated by a comma, in an ascending order
+    std::vector<uint8_t> loc_vec;
+    loc_vec = m_devices[id].getParams();
+    std::sort(loc_vec.begin(), loc_vec.end());
+    return vectorToString(loc_vec);
 }
