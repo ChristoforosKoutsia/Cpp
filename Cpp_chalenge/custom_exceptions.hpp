@@ -1,3 +1,6 @@
+#ifndef CUSTOM_EXCEPTIONS_HPP
+#define  CUSTOM_EXCEPTIONS_HPP
+
 #include <iostream>
 #include <exception>  // For std::exception
 
@@ -33,7 +36,7 @@ private:
 
 public:
     InvalidAction(const std::string& action)
-        : message("Invalid Action. Actions should be either 's' for set or 'g' for get. Instead " + action + " was given") {}
+        : message("Invalid Action. Actions should be either 's' for set or 'g' for get. Instead '" + action + "' was given") {}
 
     const char* what() const noexcept override {
         return message.c_str();
@@ -47,7 +50,7 @@ private:
 
 public:
     InvalidDeviceId(const std::string& id)
-        : message("Invalid Device id. There is no device with id"+ id + "registered") {}
+        : message("Invalid Device id. There is no device with id '"+ id + "' registered") {}
 
     const char* what() const noexcept override {
         return message.c_str();
@@ -60,9 +63,24 @@ private:
 
 public:
     InvalidCommand(const std::string& cmd)
-        : message("Invalid Command. Command " + cmd + " is not registered") {}
+        : message("Invalid Command. Command '" + cmd + "' is not registered") {}
 
     const char* what() const noexcept override {
         return message.c_str();
     }
 };
+
+class InvalidCommandStruct : public std::exception {
+private:
+    std::string message;
+
+public:
+    InvalidCommandStruct(const std::string& cmd,const std::string& trail_str)
+        : message("Invalid Action. Action '" + cmd + "' is not well formed." + trail_str+ " is trailing (not correct spacing)") {}
+
+    const char* what() const noexcept override {
+        return message.c_str();
+    }
+};
+
+#endif
