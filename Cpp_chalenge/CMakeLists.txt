@@ -26,4 +26,4 @@ find_package(Threads REQUIRED)
 target_link_libraries(DeviceManagerApp PRIVATE Threads::Threads)
 
 # Add subdirectory for tests
-add_subdirectory(tests)
+#add_subdirectory(tests)

@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <cstdint>
 
 std::vector<uint8_t> strToIntVec(const std::string& str);
 std::string vectorToString(const std::vector<uint8_t>& vec);
