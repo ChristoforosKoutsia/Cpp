@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/user/Documents/ckoutsianoudis/cpp_example/build",
+  "command": "/usr/bin/c++    -g   -Wall -Wextra -pedantic -std=gnu++17 -o CMakeFiles/interval_map.dir/interval_map.cpp.o -c /home/user/Documents/ckoutsianoudis/cpp_example/interval_map.cpp",
+  "file": "/home/user/Documents/ckoutsianoudis/cpp_example/interval_map.cpp"
+}
+]
