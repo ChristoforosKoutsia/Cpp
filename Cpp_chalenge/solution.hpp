@@ -5,10 +5,19 @@
 #include <vector>
 #include <unordered_map>
 #include <functional>
+#include <optional>
+#include <future>
 
 // forward declaration of classes Action and Server in order to avoid circular dependency error
 class Action;
 class Server;
+
+struct CommandArgs
+{
+    std::string params;
+    int id;
+    std::string res_command;
+};
 
 class Device
 {
@@ -65,6 +74,8 @@ class Action
     public:
         Action(std::string const &command, Server& server);
         const std::string getResult();
+        const CommandArgs parseCommand();
+        std::future<std::string> m_future;
 
     private:
         std::string  m_command;

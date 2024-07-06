@@ -45,77 +45,56 @@ const std::vector<uint8_t> Device:: getParams() const
 
 // ################################ Action class implementation ###############################################
 
-Action::Action(std::string const &command, Server& server)
-{
-    // action class may have a server instance value so in getResult can call executeAction method 
-    // to realize the user's command 
-    m_command = command;
-    m_server = &server;
+Action::Action(std::string const &command, Server& server) : m_command(command), m_server(&server) {
+    // Start execution in a separate thread immediately
+    m_future = std::async(std::launch::async, [this] {
+        try {
+            CommandArgs cmd_args = parseCommand();
+            return m_server->executeAction(cmd_args.res_command, cmd_args.id, cmd_args.params);
+        } catch(const std::exception& e) {
+            return std::string(e.what());
+        }
+    });
 }
 
-const std::string Action::getResult()
-{
-// Method that realize user's commands as per specification. 
-// Parses user's inputs and in case of sucessful input executes the command in the server side
-// if any exception is thrown either during the parsing (e.g bad syntax) or during command execution (e.g not correct action etc)
-// then the exception is caught and correspoding message is returned. Otherwise, command is executed normally and empty string is returned
-// the blocking is realized in server side when the actions is executed in order to avoid race conditions
-try
-{   
-    // The logic is that user's input string is casted to stringstream and all relevant fields
-    // which supposed to be separated by space are stored in correspoding separated strings
-    // Then, after checking the action (which is should be either 's' for set or 'g' for get) a res_command string 
-    // is syntesized which is structured as set_attribute or get_attribute.
-    // These commands formed as mentioned are registered in Server class and each string command (e.g "set_name") corresponds to a specific function
+const CommandArgs Action::parseCommand() {
     std::istringstream iss(m_command);
-    std::string action, attribute, device_id_str ,params, remaining_str, res_command;
-    iss >> action >> attribute >> device_id_str>>params>>remaining_str;
+    std::string action, attribute, device_id_str, params, remaining_str, res_command;
+    iss >> action >> attribute >> device_id_str >> params >> remaining_str;
 
-    // check that there are no any remaining arguments in the given string from the user
-    // if there are , then Exception is thrown since it is considered that the desired actions is not well-formed
-    // e.g (params 0 1,3,2,0,255,67,67  ,5) should not be acceptable(as per specification) since there is space after 67
-    if (!remaining_str.empty())
-    {
-        throw InvalidCommandStruct(m_command,remaining_str);
+    if (!remaining_str.empty()) {
+        throw InvalidCommandStruct(m_command, remaining_str);
     }
 
-    // Check of action
-    if (action == "s")
-    {
+    if (action == "s") {
         res_command = "set";
-
-    }
-    else if (action == "g")
-    {
+    } else if (action == "g") {
         res_command = "get";
-    }
-    else
-    {
+    } else {
         throw InvalidAction(action);
     }
 
-    // Check of attribute could be literally anything. The check will be done aftwerwards in executeAction method
     res_command += "_" + attribute;
- 
-    // try to convert id to integer
-    int id;
-    try
-    {
-        id = std::stoi(device_id_str);
 
-    }
-    catch (const std::exception& e)
-    {
+    int id;
+    try {
+        id = std::stoi(device_id_str);
+    } catch (const std::exception& e) {
         throw InvalidDeviceId(device_id_str);
     }
-    
-   return m_server->executeAction(res_command,id,params);
+
+    CommandArgs cmd_args;
+    cmd_args.id = id;
+    cmd_args.params = params;
+    cmd_args.res_command = res_command;
+    return cmd_args;
 }
-catch(const std::exception& e)
-{
-    return( e.what());
+
+const std::string Action::getResult() {
+    // This will block until the async operation is complete
+    return m_future.get();
 }
-}
+
 
 // ################################ Server class implementation ###############################################
 
@@ -143,7 +122,7 @@ void Server::addDevice (const Device& dev)
 
 Action Server::createAction(std::string command)
 {
-
+    // start execution and return immediately 
     return Action(command, *this); // pass also current instance of server since Action object may send a request for action execution
 }
 
