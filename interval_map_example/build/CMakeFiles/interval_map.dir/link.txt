@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/interval_map.dir/interval_map.cpp.o  -o interval_map 
