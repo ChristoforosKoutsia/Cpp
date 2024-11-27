@@ -1,0 +1,20 @@
+[
+{
+  "directory": "C:/Users/billk/Documents/Pico_Interview_challenge/interviewTest/src/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/WaveAnalyzer.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\WaveAnalyzer.dir\\sysio\\csv_handler.cpp.obj -c C:\\Users\\billk\\Documents\\Pico_Interview_challenge\\interviewTest\\src\\sysio\\csv_handler.cpp",
+  "file": "C:/Users/billk/Documents/Pico_Interview_challenge/interviewTest/src/sysio/csv_handler.cpp",
+  "output": "CMakeFiles/WaveAnalyzer.dir/sysio/csv_handler.cpp.obj"
+},
+{
+  "directory": "C:/Users/billk/Documents/Pico_Interview_challenge/interviewTest/src/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/WaveAnalyzer.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\WaveAnalyzer.dir\\signal\\processing.cpp.obj -c C:\\Users\\billk\\Documents\\Pico_Interview_challenge\\interviewTest\\src\\signal\\processing.cpp",
+  "file": "C:/Users/billk/Documents/Pico_Interview_challenge/interviewTest/src/signal/processing.cpp",
+  "output": "CMakeFiles/WaveAnalyzer.dir/signal/processing.cpp.obj"
+},
+{
+  "directory": "C:/Users/billk/Documents/Pico_Interview_challenge/interviewTest/src/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/WaveAnalyzer.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\WaveAnalyzer.dir\\main.cpp.obj -c C:\\Users\\billk\\Documents\\Pico_Interview_challenge\\interviewTest\\src\\main.cpp",
+  "file": "C:/Users/billk/Documents/Pico_Interview_challenge/interviewTest/src/main.cpp",
+  "output": "CMakeFiles/WaveAnalyzer.dir/main.cpp.obj"
+}
+]
