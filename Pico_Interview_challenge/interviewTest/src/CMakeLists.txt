@@ -16,7 +16,7 @@ main.cpp
 
 set(FFT_DIR "${CMAKE_SOURCE_DIR}/3rdparty/fftw-3.3.5-dll64/")
 set(FFT_LIB "${CMAKE_SOURCE_DIR}/3rdparty/fftw-3.3.5-dll64/libfftw3-3.lib")
-
+message(${FFT_LIB})
 add_executable(WaveAnalyzer ${SOURCES})
 
 target_include_directories(WaveAnalyzer PRIVATE
@@ -29,9 +29,9 @@ target_include_directories(WaveAnalyzer PRIVATE
 target_link_libraries(WaveAnalyzer ${FFT_LIB} )
 
 # Add the FFTW DLL to the output folder after the build
-add_custom_command(TARGET WaveAnalyzer POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-    ${FFT_DIR}/libfftw3-3.dll  # Source path to the DLL
-    $<TARGET_FILE_DIR:WaveAnalyzer>/libfftw3-3.dll  # Destination path (same directory as executable)
-)
+# add_custom_command(TARGET WaveAnalyzer POST_BUILD
+#     COMMAND ${CMAKE_COMMAND} -E copy_if_different
+#     ${FFT_DIR}/libfftw3-3.dll  # Source path to the DLL
+#     $<TARGET_FILE_DIR:WaveAnalyzer>/libfftw3-3.dll  # Destination path (same directory as executable)
+# )
 
