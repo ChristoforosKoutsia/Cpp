@@ -15,6 +15,10 @@
 #include "../3rdparty/fftw-3.3.5-dll64/fftw3.h"
 #include <complex>
 
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
 double SignalProcessing::calculate_frequency_FFT(const std::vector<double>& time, std::vector<double>& amplitude) {
     size_t n = amplitude.size();
 
