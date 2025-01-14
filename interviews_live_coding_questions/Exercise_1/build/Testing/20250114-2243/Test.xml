@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20250114-2243-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.26.4"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Windows"
+	Hostname="DESKTOP-NFFIC4F"
+	OSRelease=" Professional"
+	OSVersion=" (Build 19045)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString=""
+	VendorID="Unknown Manufacturer"
+	FamilyID="0"
+	ModelID="0"
+	ProcessorCacheSize="0"
+	NumberOfLogicalCPU="4"
+	NumberOfPhysicalCPU="2"
+	TotalVirtualMemory="15932"
+	TotalPhysicalMemory="8082"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2400"
+	>
+	<Testing>
+		<StartDateTime>Jan 14 22:44 GMT Standard Time</StartDateTime>
+		<StartTestTime>1736894693</StartTestTime>
+		<TestList>
+			<Test>./AllTests</Test>
+		</TestList>
+		<Test Status="failed">
+			<Name>AllTests</Name>
+			<Path>.</Path>
+			<FullName>./AllTests</FullName>
+			<FullCommandLine>C:\Users\billk\Documents\GitHub\Cpp\interviews_live_coding_questions\Exercise_1\build\runTests.exe</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>Failed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.0445391</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>C:\Users\billk\Documents\GitHub\Cpp\interviews_live_coding_questions\Exercise_1\build\runTests.exe</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJydVV1vmzAUfedX3MdEWhAsrbQh7SFLaDeta6qQatJChPi4CVaNTW1D2n9fA12UT0Lnl9j43HPu8XWuZwVjhK0hCwnr9WEleAZjx3+UKKQfEUqf/AnfMMrDRPprztcUFUo1sE37yrRav/hSxP66mgUVuxnHxuLbdixh9i5tW1CBZCM+rBcgC6J/TWMx2I4l3FIehbQBICuJ4CxDpsGoBkV+ALYbXE3qFdl0NSElScKI4n2RRdreXG8bC5g93kM9ludh5pgLgbHSAOPodOKiSkL6t0T9KCJ/nOc+YQpFSXAjA0pKDGKeaKfBc6G5CGfSd19QxERiYPu1dzPOc8ceOnATEloINNyXXOthAvhchJSoV+ArUClKhDKkmscxQB9SFvBVkPzLOGBNyr2+URn6k5I4BSId+Gxb1vDasiz93f4ytCy7mmvzcDP6eedOupqHngWZ7P/HQTeRoLgKad/YJ7jarf84xfjpO1EnyrO3ZY4oreZ/UfDKSD2mv9pg2+wvkk4ZduDUqA6Unq48Rb30ULWR7uI60P4uqCJ5HSAvMB9ATxbxfA3aKne9GzXDUhcbPSW0k+PqHW2bbpar12a9n34r9OTZHEc0xzlOQxHq/5G4JHAA7yjilsjukK1V2tHGAb6jzDRJPqJyAO8o8qDbDEt0IbGbyiH+5LVqvyBtV+tcr1cYikGin6T9x6TlEQERMhN69o6UtvYw8rym8X1tIs39dth0tU9AiazacISUb5yPd0zD0EzvIXPXmxtvyppm8w==</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Jan 14 22:44 GMT Standard Time</EndDateTime>
+		<EndTestTime>1736894693</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>
