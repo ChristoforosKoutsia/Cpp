@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/billk/Documents/GitHub/Cpp/JobManager/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/JobManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\JobManager.dir\\main.cpp.obj -c C:\\Users\\billk\\Documents\\GitHub\\Cpp\\JobManager\\main.cpp",
+  "file": "C:/Users/billk/Documents/GitHub/Cpp/JobManager/main.cpp",
+  "output": "CMakeFiles/JobManager.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/billk/Documents/GitHub/Cpp/JobManager/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/JobManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\JobManager.dir\\JobManager.cpp.obj -c C:\\Users\\billk\\Documents\\GitHub\\Cpp\\JobManager\\JobManager.cpp",
+  "file": "C:/Users/billk/Documents/GitHub/Cpp/JobManager/JobManager.cpp",
+  "output": "CMakeFiles/JobManager.dir/JobManager.cpp.obj"
+}
+]

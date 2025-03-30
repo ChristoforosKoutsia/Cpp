@@ -1,0 +1,8 @@
+So this is a project , that can handle various jobs in parallel
+
+There should be a class that has a queue of jobs and can run them in parallel. 
+The class should be able to add a job to the queue, run the jobs in parallel, and wait for all jobs to finish. 
+The class should also be able to return the result of each job.
+The class should be able to run a job in parallel, and wait for it to finish.
+The class shall run maximum of 4 jobs in parallel and based on their priority. Each job comes
+with a time_to_run variable which indicates the time that the job should run
