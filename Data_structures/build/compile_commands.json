@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/billk/Documents/GitHub/Cpp/Amazon_prep/Data_structures/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\runTests.dir\\data_structures.cpp.obj -c C:\\Users\\billk\\Documents\\GitHub\\Cpp\\Amazon_prep\\Data_structures\\data_structures.cpp",
+  "file": "C:/Users/billk/Documents/GitHub/Cpp/Amazon_prep/Data_structures/data_structures.cpp",
+  "output": "CMakeFiles/runTests.dir/data_structures.cpp.obj"
+},
+{
+  "directory": "C:/Users/billk/Documents/GitHub/Cpp/Amazon_prep/Data_structures/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\runTests.dir\\test_data_structures.cpp.obj -c C:\\Users\\billk\\Documents\\GitHub\\Cpp\\Amazon_prep\\Data_structures\\test_data_structures.cpp",
+  "file": "C:/Users/billk/Documents/GitHub/Cpp/Amazon_prep/Data_structures/test_data_structures.cpp",
+  "output": "CMakeFiles/runTests.dir/test_data_structures.cpp.obj"
+}
+]

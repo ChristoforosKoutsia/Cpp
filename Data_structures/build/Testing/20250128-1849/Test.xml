@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20250128-1849-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.26.4"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Windows"
+	Hostname="DESKTOP-NFFIC4F"
+	OSRelease=" Professional"
+	OSVersion=" (Build 19045)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString=""
+	VendorID="Unknown Manufacturer"
+	FamilyID="0"
+	ModelID="0"
+	ProcessorCacheSize="0"
+	NumberOfLogicalCPU="4"
+	NumberOfPhysicalCPU="2"
+	TotalVirtualMemory="15923"
+	TotalPhysicalMemory="8082"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2400"
+	>
+	<Testing>
+		<StartDateTime>Jan 28 18:53 GMT Standard Time</StartDateTime>
+		<StartTestTime>1738090391</StartTestTime>
+		<TestList>
+			<Test>./AllTests</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>AllTests</Name>
+			<Path>.</Path>
+			<FullName>./AllTests</FullName>
+			<FullCommandLine>C:\Users\billk\Documents\GitHub\Cpp\Amazon_prep\Data_structures\build\runTests.exe</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.430321</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>C:\Users\billk\Documents\GitHub\Cpp\Amazon_prep\Data_structures\build\runTests.exe</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJyNUUFOwzAQvPsVe2wOsZqKExIH1AJCrWiVUHGII+S6JrXieCvbge/jNCUoFQHm5N0dz3jHaWOMMiXUXJlJBG8Wa5hfs62T1rGd0rpiC/wwGvnesRKx1NJL5+OEJld0+muHOStY2Z5eW3UqBMlvehSQnq1n0HJc552cCnCN8pKSPO5RwIPGHdfdXJp3ZdHU0gSu9HFzvCAPRDPPRfUcapJDun2CE4rvNp0fpKhWj/frQOiwXv5MgMkUaheNCW3w+IK2cmM6X/Ne5u83d1Tw6LmOyP8i8ZLbeB/+bZj4aNJguaFDo7DA5jbL7hbtgueLlHwCRpSu2g==</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Jan 28 18:53 GMT Standard Time</EndDateTime>
+		<EndTestTime>1738090391</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

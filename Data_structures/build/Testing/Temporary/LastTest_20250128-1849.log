@@ -1,0 +1,31 @@
+Start testing: Jan 28 18:53 GMT Standard Time
+----------------------------------------------------------
+1/1 Testing: AllTests
+1/1 Test: AllTests
+Command: "C:/Users/billk/Documents/GitHub/Cpp/Amazon_prep/Data_structures/build/runTests.exe"
+Directory: C:/Users/billk/Documents/GitHub/Cpp/Amazon_prep/Data_structures/build
+"AllTests" start time: Jan 28 18:53 GMT Standard Time
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\billk\Downloads\googletest-1.14.0\googletest-1.14.0\googletest\src\gtest_main.cc
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from StackTest
+[ RUN      ] StackTest.CheckLIFO
+[       OK ] StackTest.CheckLIFO (0 ms)
+[ RUN      ] StackTest.PopWorks
+[       OK ] StackTest.PopWorks (0 ms)
+[----------] 2 tests from StackTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 2 tests.
+<end of output>
+Test time =   0.43 sec
+----------------------------------------------------------
+Test Passed.
+"AllTests" end time: Jan 28 18:53 GMT Standard Time
+"AllTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jan 28 18:53 GMT Standard Time
