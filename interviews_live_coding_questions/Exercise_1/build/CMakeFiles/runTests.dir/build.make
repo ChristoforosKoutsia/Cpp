@@ -110,10 +110,38 @@ CMakeFiles/runTests.dir/exercise_3.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/exercise_3.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\billk\Documents\GitHub\Cpp\interviews_live_coding_questions\Exercise_1\exercise_3.cpp -o CMakeFiles\runTests.dir\exercise_3.cpp.s
 
+CMakeFiles/runTests.dir/exercise_6_string_hack.cpp.obj: CMakeFiles/runTests.dir/flags.make
+CMakeFiles/runTests.dir/exercise_6_string_hack.cpp.obj: C:/Users/billk/Documents/GitHub/Cpp/interviews_live_coding_questions/Exercise_1/exercise_6_string_hack.cpp
+CMakeFiles/runTests.dir/exercise_6_string_hack.cpp.obj: CMakeFiles/runTests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\billk\Documents\GitHub\Cpp\interviews_live_coding_questions\Exercise_1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/runTests.dir/exercise_6_string_hack.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/runTests.dir/exercise_6_string_hack.cpp.obj -MF CMakeFiles\runTests.dir\exercise_6_string_hack.cpp.obj.d -o CMakeFiles\runTests.dir\exercise_6_string_hack.cpp.obj -c C:\Users\billk\Documents\GitHub\Cpp\interviews_live_coding_questions\Exercise_1\exercise_6_string_hack.cpp
+
+CMakeFiles/runTests.dir/exercise_6_string_hack.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/exercise_6_string_hack.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\billk\Documents\GitHub\Cpp\interviews_live_coding_questions\Exercise_1\exercise_6_string_hack.cpp > CMakeFiles\runTests.dir\exercise_6_string_hack.cpp.i
+
+CMakeFiles/runTests.dir/exercise_6_string_hack.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/exercise_6_string_hack.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\billk\Documents\GitHub\Cpp\interviews_live_coding_questions\Exercise_1\exercise_6_string_hack.cpp -o CMakeFiles\runTests.dir\exercise_6_string_hack.cpp.s
+
+CMakeFiles/runTests.dir/exercise_maximize_revenue.cpp.obj: CMakeFiles/runTests.dir/flags.make
+CMakeFiles/runTests.dir/exercise_maximize_revenue.cpp.obj: C:/Users/billk/Documents/GitHub/Cpp/interviews_live_coding_questions/Exercise_1/exercise_maximize_revenue.cpp
+CMakeFiles/runTests.dir/exercise_maximize_revenue.cpp.obj: CMakeFiles/runTests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\billk\Documents\GitHub\Cpp\interviews_live_coding_questions\Exercise_1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/runTests.dir/exercise_maximize_revenue.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/runTests.dir/exercise_maximize_revenue.cpp.obj -MF CMakeFiles\runTests.dir\exercise_maximize_revenue.cpp.obj.d -o CMakeFiles\runTests.dir\exercise_maximize_revenue.cpp.obj -c C:\Users\billk\Documents\GitHub\Cpp\interviews_live_coding_questions\Exercise_1\exercise_maximize_revenue.cpp
+
+CMakeFiles/runTests.dir/exercise_maximize_revenue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/exercise_maximize_revenue.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\billk\Documents\GitHub\Cpp\interviews_live_coding_questions\Exercise_1\exercise_maximize_revenue.cpp > CMakeFiles\runTests.dir\exercise_maximize_revenue.cpp.i
+
+CMakeFiles/runTests.dir/exercise_maximize_revenue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/exercise_maximize_revenue.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\billk\Documents\GitHub\Cpp\interviews_live_coding_questions\Exercise_1\exercise_maximize_revenue.cpp -o CMakeFiles\runTests.dir\exercise_maximize_revenue.cpp.s
+
 CMakeFiles/runTests.dir/tests.cpp.obj: CMakeFiles/runTests.dir/flags.make
 CMakeFiles/runTests.dir/tests.cpp.obj: C:/Users/billk/Documents/GitHub/Cpp/interviews_live_coding_questions/Exercise_1/tests.cpp
 CMakeFiles/runTests.dir/tests.cpp.obj: CMakeFiles/runTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\billk\Documents\GitHub\Cpp\interviews_live_coding_questions\Exercise_1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/runTests.dir/tests.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\billk\Documents\GitHub\Cpp\interviews_live_coding_questions\Exercise_1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/runTests.dir/tests.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/runTests.dir/tests.cpp.obj -MF CMakeFiles\runTests.dir\tests.cpp.obj.d -o CMakeFiles\runTests.dir\tests.cpp.obj -c C:\Users\billk\Documents\GitHub\Cpp\interviews_live_coding_questions\Exercise_1\tests.cpp
 
 CMakeFiles/runTests.dir/tests.cpp.i: cmake_force
@@ -129,6 +157,8 @@ runTests_OBJECTS = \
 "CMakeFiles/runTests.dir/exercise_1.cpp.obj" \
 "CMakeFiles/runTests.dir/exercise_2.cpp.obj" \
 "CMakeFiles/runTests.dir/exercise_3.cpp.obj" \
+"CMakeFiles/runTests.dir/exercise_6_string_hack.cpp.obj" \
+"CMakeFiles/runTests.dir/exercise_maximize_revenue.cpp.obj" \
 "CMakeFiles/runTests.dir/tests.cpp.obj"
 
 # External object files for target runTests
@@ -137,6 +167,8 @@ runTests_EXTERNAL_OBJECTS =
 runTests.exe: CMakeFiles/runTests.dir/exercise_1.cpp.obj
 runTests.exe: CMakeFiles/runTests.dir/exercise_2.cpp.obj
 runTests.exe: CMakeFiles/runTests.dir/exercise_3.cpp.obj
+runTests.exe: CMakeFiles/runTests.dir/exercise_6_string_hack.cpp.obj
+runTests.exe: CMakeFiles/runTests.dir/exercise_maximize_revenue.cpp.obj
 runTests.exe: CMakeFiles/runTests.dir/tests.cpp.obj
 runTests.exe: CMakeFiles/runTests.dir/build.make
 runTests.exe: C:/msys64/mingw64/lib/gtest/libgtest_main.a
@@ -144,7 +176,7 @@ runTests.exe: C:/msys64/mingw64/lib/gtest/libgtest.a
 runTests.exe: CMakeFiles/runTests.dir/linkLibs.rsp
 runTests.exe: CMakeFiles/runTests.dir/objects1.rsp
 runTests.exe: CMakeFiles/runTests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\billk\Documents\GitHub\Cpp\interviews_live_coding_questions\Exercise_1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable runTests.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\billk\Documents\GitHub\Cpp\interviews_live_coding_questions\Exercise_1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable runTests.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\runTests.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

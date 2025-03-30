@@ -70,3 +70,93 @@ TEST(ReverseStringTest, PalindromeString) {
     reverse_string(str);
     EXPECT_EQ(str, "racecar");
 }
+
+// Function declaration
+int count_minimum_operations(const std::string password);
+
+// Tests for min_operations_to_similar_password
+TEST(MinOperationsToSimilarPasswordTest, EqualVowelsAndConsonants) {
+    EXPECT_EQ(count_minimum_operations("hack"), 1);
+}
+
+TEST(MinOperationsToSimilarPasswordTest, MoreVowels) {
+    EXPECT_EQ(count_minimum_operations("aeiou"), -1);
+}
+
+TEST(MinOperationsToSimilarPasswordTest, MoreConsonants) {
+    EXPECT_EQ(count_minimum_operations("bcdfg"), -1);
+}
+
+TEST(MinOperationsToSimilarPasswordTest, AlreadySimilar) {
+    EXPECT_EQ(count_minimum_operations("aabb"), 0);
+}
+
+TEST(MinOperationsToSimilarPasswordTest, EmptyString) {
+    EXPECT_EQ(count_minimum_operations(""), -1);
+}
+
+
+TEST(MinOperationsToSimilarPasswordTest, RandomTest) {
+    EXPECT_EQ(count_minimum_operations("cgdpzgae"), 2);
+}
+
+TEST(MinOperationsToSimilarPasswordTest, LongBalancedPassword) {
+    EXPECT_EQ(count_minimum_operations("abababababababababab"), 0);
+}
+
+TEST(MinOperationsToSimilarPasswordTest, LongUnbalancedPasswordMoreVowels) {
+    EXPECT_EQ(count_minimum_operations("aaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbb"), 1);
+}
+
+TEST(MinOperationsToSimilarPasswordTest, LongUnbalancedPasswordMoreConsonants) {
+    EXPECT_EQ(count_minimum_operations("bbbbbbbbbbbbbbbbbbbbaaaaaaaaaaaaaaaaa"), -1);
+}
+
+TEST(MinOperationsToSimilarPasswordTest, SingleCharacterVowel) {
+    EXPECT_EQ(count_minimum_operations("a"), -1);
+}
+
+TEST(MinOperationsToSimilarPasswordTest, SingleCharacterConsonant) {
+    EXPECT_EQ(count_minimum_operations("b"), -1);
+}
+
+TEST(MinOperationsToSimilarPasswordTest, LongPasswordAllVowels) {
+    EXPECT_EQ(count_minimum_operations("aeiouaeiouaeiouaeiouaeiouaeiou"), -1);
+}
+
+TEST(MinOperationsToSimilarPasswordTest, LongPasswordAllConsonants) {
+    EXPECT_EQ(count_minimum_operations("bcdfghjklmnpqrstvwxyzbcdfghjklmnpqrstvwxyz"), -1);
+}
+
+TEST(MinOperationsToSimilarPasswordTest, AllCharactersConvertibleToVowels) {
+    EXPECT_EQ(count_minimum_operations("bcdfgh"), 3);
+}
+
+TEST(MinOperationsToSimilarPasswordTest, AllCharactersConvertibleToConsonants) {
+    EXPECT_EQ(count_minimum_operations("aeiou"), 2);
+}
+
+TEST(MinOperationsToSimilarPasswordTest, MixedCaseWithComplexPattern) {
+    EXPECT_EQ(count_minimum_operations("abcdxyzmnopqrs"), -1);
+}
+
+// Function declaration
+long maximum_revenue(int customers, std::vector<int> quantity);
+
+// // Tests for min_operations_to_similar_password
+// TEST(MaximizeRevenueTest, Test0) {
+//     EXPECT_EQ(maximum_revenue(4,{1,2,4}), 11);
+// }
+
+// TEST(MaximizeRevenueTest, Test1) {
+//     EXPECT_EQ(maximum_revenue(6,{10, 10, 8, 9, 1}), 55);
+// }
+
+// TEST(MaximizeRevenueTest, Test2) {
+//     EXPECT_EQ(maximum_revenue(6,{1, 1, 1, 1, 1,1}), 6);
+// }
+
+
+TEST(MaximizeRevenueTest, Test2) {
+    EXPECT_EQ(maximum_revenue(13,{10,7,5,3,1}), 80);
+}

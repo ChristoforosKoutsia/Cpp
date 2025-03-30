@@ -19,6 +19,18 @@
 },
 {
   "directory": "C:/Users/billk/Documents/GitHub/Cpp/interviews_live_coding_questions/Exercise_1/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\runTests.dir\\exercise_6_string_hack.cpp.obj -c C:\\Users\\billk\\Documents\\GitHub\\Cpp\\interviews_live_coding_questions\\Exercise_1\\exercise_6_string_hack.cpp",
+  "file": "C:/Users/billk/Documents/GitHub/Cpp/interviews_live_coding_questions/Exercise_1/exercise_6_string_hack.cpp",
+  "output": "CMakeFiles/runTests.dir/exercise_6_string_hack.cpp.obj"
+},
+{
+  "directory": "C:/Users/billk/Documents/GitHub/Cpp/interviews_live_coding_questions/Exercise_1/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\runTests.dir\\exercise_maximize_revenue.cpp.obj -c C:\\Users\\billk\\Documents\\GitHub\\Cpp\\interviews_live_coding_questions\\Exercise_1\\exercise_maximize_revenue.cpp",
+  "file": "C:/Users/billk/Documents/GitHub/Cpp/interviews_live_coding_questions/Exercise_1/exercise_maximize_revenue.cpp",
+  "output": "CMakeFiles/runTests.dir/exercise_maximize_revenue.cpp.obj"
+},
+{
+  "directory": "C:/Users/billk/Documents/GitHub/Cpp/interviews_live_coding_questions/Exercise_1/build",
   "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\runTests.dir\\tests.cpp.obj -c C:\\Users\\billk\\Documents\\GitHub\\Cpp\\interviews_live_coding_questions\\Exercise_1\\tests.cpp",
   "file": "C:/Users/billk/Documents/GitHub/Cpp/interviews_live_coding_questions/Exercise_1/tests.cpp",
   "output": "CMakeFiles/runTests.dir/tests.cpp.obj"

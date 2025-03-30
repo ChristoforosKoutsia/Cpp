@@ -210,6 +210,54 @@ exercise_3.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/exercise_3.cpp.s
 .PHONY : exercise_3.cpp.s
 
+exercise_6_string_hack.obj: exercise_6_string_hack.cpp.obj
+.PHONY : exercise_6_string_hack.obj
+
+# target to build an object file
+exercise_6_string_hack.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/exercise_6_string_hack.cpp.obj
+.PHONY : exercise_6_string_hack.cpp.obj
+
+exercise_6_string_hack.i: exercise_6_string_hack.cpp.i
+.PHONY : exercise_6_string_hack.i
+
+# target to preprocess a source file
+exercise_6_string_hack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/exercise_6_string_hack.cpp.i
+.PHONY : exercise_6_string_hack.cpp.i
+
+exercise_6_string_hack.s: exercise_6_string_hack.cpp.s
+.PHONY : exercise_6_string_hack.s
+
+# target to generate assembly for a file
+exercise_6_string_hack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/exercise_6_string_hack.cpp.s
+.PHONY : exercise_6_string_hack.cpp.s
+
+exercise_maximize_revenue.obj: exercise_maximize_revenue.cpp.obj
+.PHONY : exercise_maximize_revenue.obj
+
+# target to build an object file
+exercise_maximize_revenue.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/exercise_maximize_revenue.cpp.obj
+.PHONY : exercise_maximize_revenue.cpp.obj
+
+exercise_maximize_revenue.i: exercise_maximize_revenue.cpp.i
+.PHONY : exercise_maximize_revenue.i
+
+# target to preprocess a source file
+exercise_maximize_revenue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/exercise_maximize_revenue.cpp.i
+.PHONY : exercise_maximize_revenue.cpp.i
+
+exercise_maximize_revenue.s: exercise_maximize_revenue.cpp.s
+.PHONY : exercise_maximize_revenue.s
+
+# target to generate assembly for a file
+exercise_maximize_revenue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\runTests.dir\build.make CMakeFiles/runTests.dir/exercise_maximize_revenue.cpp.s
+.PHONY : exercise_maximize_revenue.cpp.s
+
 tests.obj: tests.cpp.obj
 .PHONY : tests.obj
 
@@ -253,6 +301,12 @@ help:
 	@echo ... exercise_3.obj
 	@echo ... exercise_3.i
 	@echo ... exercise_3.s
+	@echo ... exercise_6_string_hack.obj
+	@echo ... exercise_6_string_hack.i
+	@echo ... exercise_6_string_hack.s
+	@echo ... exercise_maximize_revenue.obj
+	@echo ... exercise_maximize_revenue.i
+	@echo ... exercise_maximize_revenue.s
 	@echo ... tests.obj
 	@echo ... tests.i
 	@echo ... tests.s

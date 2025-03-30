@@ -11,6 +11,8 @@ set(SOURCE_FILES
     exercise_1.cpp
     exercise_2.cpp
     exercise_3.cpp
+    exercise_6_string_hack.cpp
+    exercise_maximize_revenue.cpp
 )
 
 # Add the test file
