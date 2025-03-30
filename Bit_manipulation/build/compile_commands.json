@@ -1,0 +1,38 @@
+[
+{
+  "directory": "C:/Users/billk/Documents/GitHub/Cpp/Amazon_prep/Bit_manipulation/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\runTests.dir\\exercise_1_insertion.cpp.obj -c C:\\Users\\billk\\Documents\\GitHub\\Cpp\\Amazon_prep\\Bit_manipulation\\exercise_1_insertion.cpp",
+  "file": "C:/Users/billk/Documents/GitHub/Cpp/Amazon_prep/Bit_manipulation/exercise_1_insertion.cpp",
+  "output": "CMakeFiles/runTests.dir/exercise_1_insertion.cpp.obj"
+},
+{
+  "directory": "C:/Users/billk/Documents/GitHub/Cpp/Amazon_prep/Bit_manipulation/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\runTests.dir\\exercise_2_flip_to_win.cpp.obj -c C:\\Users\\billk\\Documents\\GitHub\\Cpp\\Amazon_prep\\Bit_manipulation\\exercise_2_flip_to_win.cpp",
+  "file": "C:/Users/billk/Documents/GitHub/Cpp/Amazon_prep/Bit_manipulation/exercise_2_flip_to_win.cpp",
+  "output": "CMakeFiles/runTests.dir/exercise_2_flip_to_win.cpp.obj"
+},
+{
+  "directory": "C:/Users/billk/Documents/GitHub/Cpp/Amazon_prep/Bit_manipulation/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\runTests.dir\\exercise_all_over.cpp.obj -c C:\\Users\\billk\\Documents\\GitHub\\Cpp\\Amazon_prep\\Bit_manipulation\\exercise_all_over.cpp",
+  "file": "C:/Users/billk/Documents/GitHub/Cpp/Amazon_prep/Bit_manipulation/exercise_all_over.cpp",
+  "output": "CMakeFiles/runTests.dir/exercise_all_over.cpp.obj"
+},
+{
+  "directory": "C:/Users/billk/Documents/GitHub/Cpp/Amazon_prep/Bit_manipulation/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\runTests.dir\\test_exercise_1_insertion.cpp.obj -c C:\\Users\\billk\\Documents\\GitHub\\Cpp\\Amazon_prep\\Bit_manipulation\\test_exercise_1_insertion.cpp",
+  "file": "C:/Users/billk/Documents/GitHub/Cpp/Amazon_prep/Bit_manipulation/test_exercise_1_insertion.cpp",
+  "output": "CMakeFiles/runTests.dir/test_exercise_1_insertion.cpp.obj"
+},
+{
+  "directory": "C:/Users/billk/Documents/GitHub/Cpp/Amazon_prep/Bit_manipulation/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\runTests.dir\\test_exercise_2_flip_to_win.cpp.obj -c C:\\Users\\billk\\Documents\\GitHub\\Cpp\\Amazon_prep\\Bit_manipulation\\test_exercise_2_flip_to_win.cpp",
+  "file": "C:/Users/billk/Documents/GitHub/Cpp/Amazon_prep/Bit_manipulation/test_exercise_2_flip_to_win.cpp",
+  "output": "CMakeFiles/runTests.dir/test_exercise_2_flip_to_win.cpp.obj"
+},
+{
+  "directory": "C:/Users/billk/Documents/GitHub/Cpp/Amazon_prep/Bit_manipulation/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\runTests.dir\\test_exercise_all_over.cpp.obj -c C:\\Users\\billk\\Documents\\GitHub\\Cpp\\Amazon_prep\\Bit_manipulation\\test_exercise_all_over.cpp",
+  "file": "C:/Users/billk/Documents/GitHub/Cpp/Amazon_prep/Bit_manipulation/test_exercise_all_over.cpp",
+  "output": "CMakeFiles/runTests.dir/test_exercise_all_over.cpp.obj"
+}
+]
