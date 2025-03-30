@@ -1,3 +1,0 @@
-C:/Users/billk/Documents/Pico_Interview_challenge/interviewTest/src/build/CMakeFiles/WaveAnalyzer.dir
-C:/Users/billk/Documents/Pico_Interview_challenge/interviewTest/src/build/CMakeFiles/edit_cache.dir
-C:/Users/billk/Documents/Pico_Interview_challenge/interviewTest/src/build/CMakeFiles/rebuild_cache.dir

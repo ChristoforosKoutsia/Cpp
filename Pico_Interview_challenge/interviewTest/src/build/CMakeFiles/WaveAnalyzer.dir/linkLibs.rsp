@@ -1,1 +1,0 @@
- "C:/Users/billk/Documents/Pico_Interview_challenge/interviewTest/src/3rdparty/fftw-3.3.5-dll64/libfftw3-3.lib" -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
